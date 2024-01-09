@@ -93,3 +93,4 @@ body {
 @import url('./components/new-task-form/new-task-form.css');
 @import url('./components/task-list/task-list.css');
 @import url('./components/task/task.css');
+@import url('./components/footer/footer.css')

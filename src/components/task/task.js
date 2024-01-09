@@ -1,17 +1,20 @@
 import React from "react";
 
-const TasksItem = () => {
+const TasksItem = ({appearance, text}) => {
     return (
-    <li className="completed">
-        <div className="view">
-            <input className="toggle" type="checkbox"/>
+        <li className={appearance ? appearance : ''}>
+        <div className='view'>
+            <input className="toggle" type="checkbox" />
             <label>
-            <span className="description">Completed task</span>
-            <span className="created">created 17 seconds ago</span>
+                <span className="description">{text}</span>
+                <span className="created">created 17 seconds ago</span>
             </label>
             <button className="icon icon-edit"></button>
             <button className="icon icon-destroy"></button>
         </div>
+        <input type="text" className="edit" value="Editing task"/>
     </li>
     )
 }
+
+export default TasksItem;
