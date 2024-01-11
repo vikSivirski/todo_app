@@ -1,5 +1,7 @@
 import React from "react";
 
+import './new-task-form.css';
+
 const NewTaskForm = () => {
     return (
         <header className='header'>

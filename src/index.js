@@ -2,9 +2,9 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 import './index.css'
-import NewTaskForm from './components/new-task-form/new-task-form';
-import Tasks from './components/task-list/task-list';
-import Footer from './components/footer/footer';
+import NewTaskForm from './components/new-task-form';
+import Tasks from './components/task-list';
+import Footer from './components/footer';
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);

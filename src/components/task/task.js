@@ -1,5 +1,7 @@
 import React from "react";
 
+import './task.css';
+
 const TasksItem = ({appearance, text}) => {
     return (
         <li className={appearance ? appearance : ''}>
