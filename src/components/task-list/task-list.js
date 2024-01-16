@@ -1,14 +1,22 @@
 import React from "react";
-import TasksItem from "../task";
+import TodoItem from "../task";
 
 import './task-list.css'
 
-const Tasks = () => {
+const Tasks = ({ todos, onDeleted }) => {
+	const items = todos.map(item => {
+		return (
+			<TodoItem
+				key={item.id}
+				text={item.text}
+				onDeleted={() => onDeleted(item.id)}
+			/>
+		)
+	})
+
 	return (
 		<ul className="todo-list">
-			<TasksItem appearance='completed' text='Completed task'/>
-			<TasksItem appearance='editing' text='Editing task'/>
-			<TasksItem appearance="active" text='Active task'/>
+			{items}
 		</ul>
 	)
 }
