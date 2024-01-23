@@ -1,18 +1,19 @@
-import React from "react";
+import React from 'react';
+import TaskFilter from '../task-filter';
+import Button from '../task-filter/button';
 
-import './footer.css'
+import './footer.css';
 
-import TaskFilter from "../task-filter";
-import Button from '../task-filter/button'
+function Footer({ data, setFilter }) {
+  const doneCounter = data.filter((el) => !el.done).length;
 
-const Footer = () => {
-    return (
-        <footer className="footer">
-            <span className="todo-count">1 items left</span>
-            <TaskFilter/>
-            <Button className='clear-completed' text='Clear completed'/>
-        </footer>
-    )
+  return (
+    <footer className="footer">
+      <span className="todo-count">{doneCounter} items left</span>
+      <TaskFilter setFilter={setFilter} />
+      <Button className="clear-completed" text="Clear completed" />
+    </footer>
+  );
 }
 
 export default Footer;
