@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import './task.css';
 
-function TodoItem({
-  text, onDeleted, onToggleDone, done, createdTime,
-}) {
+function TodoItem({ text, onDeleted, onToggleDone, done, createdTime }) {
   const classNames = done ? 'completed' : 'active';
 
   return (
@@ -22,12 +20,7 @@ function TodoItem({
         <button className="icon icon-edit" />
         <button className="icon icon-destroy" onClick={onDeleted} />
       </div>
-      <input
-        type="text"
-        className="edit"
-        value="Editing task"
-        onChange={() => {}}
-      />
+      <input type="text" className="edit" value="Editing task" onChange={() => {}} />
     </li>
   );
 }

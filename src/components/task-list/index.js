@@ -1,3 +1,2 @@
-import Tasks from './task-list';
-
-export default Tasks;
+import TaskList from './task-list';
+export default TaskList;

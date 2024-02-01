@@ -12,21 +12,32 @@ const root = createRoot(domNode);
 function App() {
   const [todoData, setTodoData] = useState([
     {
-      text: 'Completed task', done: false, id: 1, createdTime: new Date(),
+      text: 'Completed task',
+      done: false,
+      id: 1,
+      createdTime: new Date(),
     },
     {
-      text: 'Editing task', done: false, id: 2, createdTime: new Date(),
+      text: 'Editing task',
+      done: false,
+      id: 2,
+      createdTime: new Date(),
     },
     {
-      text: 'Active task', done: false, id: 3, createdTime: new Date(),
+      text: 'Active task',
+      done: false,
+      id: 3,
+      createdTime: new Date(),
     },
   ]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTodoData((prevData) => prevData.map((item) => ({
-        ...item,
-      })));
+      setTodoData((prevData) =>
+        prevData.map((item) => ({
+          ...item,
+        }))
+      );
     }, 30000);
 
     return () => clearInterval(intervalId);
@@ -50,9 +61,7 @@ function App() {
   };
 
   const toggleDone = (id) => {
-    setTodoData((prevData) => prevData.map((item) => (item.id === id
-      ? { ...item, done: !item.done }
-      : item)));
+    setTodoData((prevData) => prevData.map((item) => (item.id === id ? { ...item, done: !item.done } : item)));
   };
 
   const deleteDoneTask = () => {
@@ -77,12 +86,7 @@ function App() {
       <section className="todoapp">
         <NewTaskForm onItemAdded={addItem} />
         <section className="main">
-          <Tasks
-            todos={filteredData}
-            onDeleted={deleteItem}
-            onToggleDone={toggleDone}
-            currentTime={new Date()}
-          />
+          <Tasks todos={filteredData} onDeleted={deleteItem} onToggleDone={toggleDone} currentTime={new Date()} />
           <Footer data={filteredData} setFilter={setFilter} deleteDone={deleteDoneTask} />
         </section>
       </section>

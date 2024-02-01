@@ -6,16 +6,22 @@ function TaskFilter({ setFilter }) {
   return (
     <ul className="filters">
       <li>
-        <button type='selector' onClick={() => setFilter('all')}>All</button>
+        <button type="button" onClick={() => setFilter('all')}>
+          All
+        </button>
       </li>
       <li>
-        <button type='selector' onClick={() => setFilter('active')}>Active</button>
+        <button type="button" onClick={() => setFilter('active')}>
+          Active
+        </button>
       </li>
       <li>
-        <button type='selector' onClick={() => setFilter('completed')}>Completed</button>
+        <button type="button" onClick={() => setFilter('completed')}>
+          Completed
+        </button>
       </li>
     </ul>
-  );
+  )
 }
 
 export default TaskFilter;
